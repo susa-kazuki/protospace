@@ -1,27 +1,56 @@
 # ProtoSpace
 
 ##DBの設計
-###必要なモデル
-####productモデル
+###prototypetモデル
 
-* name:string
-* catchy_copy:string
-* concept:text
-* user_id:integer
+|c0lumn_name | column_type |
+|:-----------|------------:|
+| name       |       string|
+| catcy_copy |       string|
+| cencept    |         text|
+| user_id    |      integer|
 
-><謎なもの>
-imageはどうやって上げるのか
-like機能はどう実装するのか
+###userモデル
+rails g devise user
 
-####userモデル
-* user_name:string
-* member:string
-* profile:text
-* works:string
+**生成されるカラム**
 
-><謎なもの>
-imageはどうやって上げるのか
+|column_name | column_type |
+|:-----------|------------:|
+| email      |       string|
+| password   |       string|
 
-##謎なものまとめ
-* imageアップロードのやり方
-* tagsはモデルなのかモデルじゃないのか
+**追加するカラム**
+
+|column_name | column_type |
+|:-----------|------------:|
+| name       |       string|
+| group      |       string|
+| profile    |         text|
+| work       |       string|
+| avatar     |       string|
+
+
+###imageモデル
+|column_name | column_type |
+|:-----------|------------:|
+| user_id       |   integer|
+| prototype_id  |   integer|
+
+imageカラムはCarrierWave実行後自動生成？
+
+###commentモデル
+|column_name | column_type |
+|:-----------|------------:|
+|user_id     |      integer|
+|prototype_id|      integer|
+|comment     |         text|
+
+###tagモデル
+
+##モデル開発の流れ
+1. userモデルから作成
+2. protypeモデルを作成
+3. commentモデルを作成
+4. imageモデルを作成
+5. tagモデルを作成
