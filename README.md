@@ -1,9 +1,9 @@
 # ProtoSpace
 
 ##DBの設計
-###prototypetモデル
+###prototypeモデル
 
-|c0lumn_name | column_type |
+|column_name | column_type |
 |:-----------|------------:|
 | name       |       string|
 | catcy_copy |       string|
